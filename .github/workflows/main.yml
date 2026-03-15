@@ -8,22 +8,20 @@ on:
 jobs:
   prettier:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set Node.js version
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: '24'
+          node-version: '25'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run prettier
+      - name: Run Prettier
         run: npx prettier . --write
 
       - name: Print name
