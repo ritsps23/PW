@@ -7,13 +7,17 @@ on:
 
 jobs:
   prettier:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run prettier
-      run: npx prettier . --check
+      - name: Run prettier
+        run: npx prettier . --check
+
+      - name: Print name
+        run: echo "Pipeline executada por Rita Pinto"
